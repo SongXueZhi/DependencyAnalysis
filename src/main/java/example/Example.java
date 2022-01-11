@@ -11,7 +11,7 @@ import java.util.List;
 public class Example {
     public static void main(String[] args) {
 
-        String projectPath = "E:\\project\\canal";
+        String projectPath = "/Users/lsn/Desktop/regminer/project_name/85b0550d-dc6b-4962-b1ec-6864cf046ca9";
         File projectFile = new File(projectPath);
         String[] pomFilePathArray = FileUtilx.getAllFilesFromDirByPattern(projectFile);
 
