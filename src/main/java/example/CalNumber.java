@@ -19,10 +19,10 @@ public class CalNumber {
 
     public static void main(String[] args) {
 
-        String projectPath = "/Users/lsn/Desktop/regminer/project_name";
+        String projectPath = "/Users/lsn/Desktop/regminer/project/dependency";
         File projectFile = new File(projectPath);
         String[] pomFilePathArray = FileUtilx.getAllFilesFromDirByPattern(projectFile);
-        System.out.println("pom file size: " + pomFilePathArray.length);//234
+        System.out.println("pom file size: " + pomFilePathArray.length);
 
         MavenReader mavenReader = new MavenReader();
         List<Dependency> dependencies = new ArrayList<>();
@@ -33,9 +33,9 @@ public class CalNumber {
         System.out.println("project dependency size: "+dependencies.size());//1937
         Map<String,Integer> dependencyMap =  ListUtil.frequencyOfListElements(dependencies);
         System.out.println("dependency map size: "+dependencyMap.size());//821
-        for (Map.Entry<String, Integer> entry : dependencyMap.entrySet()) {
-            System.out.println(entry.getKey() + " " + entry.getValue());
-        }
+//        for (Map.Entry<String, Integer> entry : dependencyMap.entrySet()) {
+//            System.out.println(entry.getKey() + " " + entry.getValue());
+//        }
         add2MySQL(dependencyMap);
     }
 
@@ -43,7 +43,7 @@ public class CalNumber {
         Connection conn = MySQLUtil.Connect();
 
         for (Map.Entry<String, Integer> entry : dependencyMap.entrySet()) {
-            String sql = "insert into project.dependency(lib, number) values(?, ?)";
+            String sql = "insert into project.defects4j_dependency_string(lib, number) values(?, ?)";
             PreparedStatement ps = null;
             try {
                 ps = conn.prepareStatement(sql);
