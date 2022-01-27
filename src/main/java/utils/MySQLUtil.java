@@ -11,11 +11,11 @@ public class MySQLUtil {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static Connection conn = null;
     static Statement stmt = null;
-    static final String DB_URL = "jdbc:mysql://10.177.21.179:3306/project?useSSL=false&serverTimezone=UTC";
+    static final String DB_URL = "jdbc:mysql://101.42.233.129:3306/project?useSSL=false&serverTimezone=UTC";
 
     // 数据库的用户名与密码
     static final String USER = "root";
-    static final String PASS = "123456";
+    static final String PASS = "110120";
 
 
     public static Connection Connect() {
