@@ -26,7 +26,7 @@ public class Tags {
             while (rs.next()){
                 String lib = rs.getString("lib");
                 org.jsoup.Connection.Response response = (org.jsoup.Connection.Response) Jsoup.connect("https://mvnrepository.com/artifact/" + lib)
-                        .header("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2")
+                        .userAgent("Mozilla")
                         .timeout(50000).ignoreHttpErrors(true).execute();
                 if(response.statusCode() != 200){
                     HttpErrorNum++;
